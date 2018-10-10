@@ -2,29 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 import "./styles.css";
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
+var i = 0;
+function tick() {
+  const date = (
+    <div>
+      <h1>It is {new Date().toLocaleTimeString()}</h1>
     </div>
   );
+  ReactDOM.render(date, document.getElementById("test" + i));
+  i++;
+  if (i === 5) i = 0;
+  console.log("test" + i);
 }
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
-
-const name = "José Perez";
-const title = <h1> Hello, {name}</h1>;
-ReactDOM.render(title, document.getElementById("root"));
-
-function formatName(user) {
-  return user.firstName + " " + user.lastName;
-}
-const user = {
-  firstName: "Lorenzo",
-  lastName: "Lamas"
-};
-const element = <h2>Hello, {formatName(user)}</h2>;
-ReactDOM.render(element, document.getElementById("root"));
+setInterval(tick, 5000);
