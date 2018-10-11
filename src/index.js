@@ -1,17 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Clock from "./clock";
 
 import "./styles.css";
-var i = 0;
-function tick() {
-  const date = (
-    <div>
-      <h1>It is {new Date().toLocaleTimeString()}</h1>
-    </div>
-  );
-  ReactDOM.render(date, document.getElementById("test" + i));
-  i++;
-  if (i === 5) i = 0;
-  console.log("test" + i);
+
+class Text extends React.Component {
+  render() {
+    return <h1>Incluir el texto {this.props.attrName}</h1>;
+  }
 }
-setInterval(tick, 5000);
+const text = <Text attrName="Manuel" />;
+ReactDOM.render(text, document.getElementById("test0"));
+ReactDOM.render(<Clock />, document.getElementById("component"));
