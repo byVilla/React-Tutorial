@@ -1,14 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Clock from "./clock";
+import Toggle from "./toggle";
+import LoginControl from "./logincontrol";
+import Form from "./form";
 
 import "./styles.css";
 
-class Text extends React.Component {
-  render() {
-    return <h1>Incluir el texto {this.props.attrName}</h1>;
-  }
-}
-const text = <Text attrName="Manuel" />;
-ReactDOM.render(text, document.getElementById("test0"));
 ReactDOM.render(<Clock />, document.getElementById("component"));
+ReactDOM.render(<Toggle />, document.getElementById("toggle"));
+ReactDOM.render(<LoginControl />, document.getElementById("loginControl"));
+ReactDOM.render(<Form />, document.getElementById("form"));
